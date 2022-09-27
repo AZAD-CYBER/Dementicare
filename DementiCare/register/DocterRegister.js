@@ -1,38 +1,13 @@
 import React, { useState } from "react";
-
-import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
-  TouchableOpacity,
-} from "react-native";
-
-import { Link } from "@react-navigation/native";
-import { useRoute, useNavigation } from "@react-navigation/native";
-import CustomSwitch from "../Components/CustomSwitch";
-import P from "../Components/PatientR";
-import D from "../Components/DoctorR";
+import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
+import Register from "../Components/DoctorR";
 
 const DocterRegister = () => {
-  const [mode, setMode] = useState(true);
-  const onSelectSwitch = () => {
-    setMode(!mode);
-  };
   return (
     <ScrollView style={{ backgroundColor: "white" }}>
-      <Text style={styles.text}>Create New Account</Text>
-      <View style={{ alignItems: "center", margin: 20 }}>
-        <CustomSwitch
-          selectionMode={1}
-          roundCorner={true}
-          option1={"Doctor"}
-          option2={"Patient"}
-          onClick={onSelectSwitch}
-          selectionColor={"#32DAFF"}
-        />
-      </View>
-      {mode == true ? <D /> : mode == false ? <P /> : null}
+      <Image style={styles.container} source={require("../assets/logo.png")} />
+      <Text style={styles.text}>Register</Text>
+      <Register />
     </ScrollView>
   );
 };
@@ -40,10 +15,21 @@ const DocterRegister = () => {
 export default DocterRegister;
 
 const styles = StyleSheet.create({
+  container: {
+    width: 300,
+    resizeMode: "center",
+    height: 200,
+    margin: 50,
+    marginTop: 20,
+  },
   text: {
-    color: "rgba(0, 0, 0, 1)",
-    fontSize: 32,
-    marginLeft: 50,
+    color: "#009A75",
+    display: "flex",
+    alignSelf: "center",
+    fontSize: 36,
+    fontWeight: "bold",
     margin: 20,
+    padding: 10,
+    marginTop: -50,
   },
 });

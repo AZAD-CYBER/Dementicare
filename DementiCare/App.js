@@ -1,20 +1,18 @@
 import { Text, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { DrawerActions, NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import HomeScreen from "./app/screen/HomeScreen";
-import AboutScreen from "./app/screen/AboutScreen";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import ContactScreen from "./app/screen/ContactScreen";
-import ServiceScreen from "./app/screen/ServiceScreen";
 import PatientLogin from "./login/PatientLogin";
-import DocterLogin from "./login/DocterLogin";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 import PatientRegister from "./register/PatientRegister";
 import PatientRegister1 from "./register/PatientRegister1";
 import DocterRegister from "./register/DocterRegister";
 import TermCondtion from "./register/TermCondtion";
+import BottomBar from "./Components/BottomBar";
 import Home from "./Pages/Home";
 
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
@@ -24,107 +22,100 @@ export default function App() {
           name="PatientLogin"
           component={PatientLogin}
           options={{
-            headerStyle: { backgroundColor: "#32DAFF" },
+            headerStyle: { backgroundColor: "#009A75" },
             headerTintColor: "black",
             headerTitleStyle: { fontWeight: "bold" },
             headerShown: true,
-            headerLeft: (props) => (
-              <MaterialCommunityIcons name="login" size={34} color="black" />
-            ),
+            headerTitle: "Login",
+            // headerLeft: (props) => (
+            //   <MaterialCommunityIcons name="login" size={34} color="black" />
+            // ),
           }}
         />
-        <Stack.Screen
-          name="DocterLogin"
-          component={DocterLogin}
-          options={{
-            headerStyle: { backgroundColor: "#32DAFF" },
-            headerTintColor: "black",
-            headerTitleStyle: { fontWeight: "bold" },
-            headerShown: true,
-            headerLeft: (props) => (
-              <MaterialCommunityIcons name="login" size={34} color="black" />
-            ),
-          }}
-        />
+
         <Stack.Screen
           name="PatientRegister"
           component={PatientRegister}
           options={{
-            headerStyle: { backgroundColor: "#32DAFF" },
+            headerStyle: { backgroundColor: "#009A75" },
             headerTintColor: "black",
             headerTitleStyle: { fontWeight: "bold" },
             headerShown: true,
-            headerLeft: (props) => (
-              <MaterialCommunityIcons
-                name="sign-text"
-                size={34}
-                color="black"
-              />
-            ),
+            headerTitle: "Register",
+            // headerRight: (props) => (
+            //   <MaterialCommunityIcons
+            //     name="sign-text"
+            //     size={34}
+            //     color="black"
+            //   />
+            // ),
           }}
         />
         <Stack.Screen
           name="PatientRegister1"
           component={PatientRegister1}
           options={{
-            headerStyle: { backgroundColor: "#32DAFF" },
+            headerStyle: { backgroundColor: "#009A75" },
             headerTintColor: "black",
             headerTitleStyle: { fontWeight: "bold" },
             headerShown: true,
-            headerLeft: (props) => (
-              <MaterialCommunityIcons
-                name="sign-text"
-                size={34}
-                color="black"
-              />
-            ),
+            headerTitle: "Register",
+            // headerLeft: (props) => (
+            //   <MaterialCommunityIcons
+            //     name="sign-text"
+            //     size={34}
+            //     color="black"
+            //   />
+            // ),
           }}
         />
         <Stack.Screen
           name="DocterRegister"
           component={DocterRegister}
           options={{
-            headerStyle: { backgroundColor: "#32DAFF" },
+            headerStyle: { backgroundColor: "#009A75" },
             headerTintColor: "black",
             headerTitleStyle: { fontWeight: "bold" },
             headerShown: true,
-            headerLeft: (props) => (
-              <MaterialCommunityIcons
-                name="sign-text"
-                size={34}
-                color="black"
-              />
-            ),
+            headerTitle: "Register",
+            // headerLeft: (props) => (
+            //   <MaterialCommunityIcons
+            //     name="sign-text"
+            //     size={34}
+            //     color="black"
+            //   />
+            // ),
           }}
         />
         <Stack.Screen
           name="TermCondtion"
           component={TermCondtion}
           options={{
-            headerStyle: { backgroundColor: "#32DAFF" },
+            headerStyle: { backgroundColor: "#009A75" },
             headerTintColor: "black",
             headerTitleStyle: { fontWeight: "bold" },
             headerShown: true,
-            headerLeft: (props) => (
-              <MaterialCommunityIcons
-                name="sign-text"
-                size={34}
-                color="black"
-              />
-            ),
+            // headerLeft: (props) => (
+            //   <MaterialCommunityIcons
+            //     name="sign-text"
+            //     size={34}
+            //     color="black"
+            //   />
+            // ),
           }}
         />
+
         <Stack.Screen
           name="Home"
-          component={Home}
+          component={BottomBar}
           options={{
-            headerStyle: { backgroundColor: "#32DAFF" },
+            headerStyle: { backgroundColor: "#009A75" },
             headerTintColor: "black",
             headerTitleStyle: { fontWeight: "bold" },
-            headerShown: true,
-            headerLeft: (props) => (
-              <MaterialCommunityIcons name="home" size={34} color="black" />
-            ),
+            headerShown: false,
+            // headerLeft: (props) => (
+            //   <MaterialCommunityIcons name="home" size={34} color="black" />
+            // ),
           }}
         />
       </Stack.Navigator>

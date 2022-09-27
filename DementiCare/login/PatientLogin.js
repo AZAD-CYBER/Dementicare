@@ -6,44 +6,58 @@ import {
   TextInput,
   Button,
   ScrollView,
+  Pressable,
 } from "react-native";
 import React from "react";
 import { Link } from "@react-navigation/native";
-import { useRoute, useNavigation } from "@react-navigation/native";
-import SelectedLogin from "../Components/SelectedLogin";
 
 const PatientLogin = () => {
   const [text, onChangeText] = React.useState("");
   const [text1, onChangeText1] = React.useState("");
-  const [number, onChangeNumber] = React.useState(null);
 
   return (
-    <ScrollView>
-      <Image style={styles.container} source={require("../assets/logo.jpeg")} />
+    <ScrollView style={{ backgroundColor: "white" }}>
+      <Image style={styles.container} source={require("../assets/logo.png")} />
       <Text style={styles.text}>Login</Text>
-
       <View style={styles.inputs}>
+        <Text nativeID="formLabel" style={styles.label}>
+          Email
+        </Text>
+        <Image style={styles.icone} source={require("../assets/email.png")} />
         <TextInput
+          accessibilityLabelledBy="formLabel"
           style={styles.input}
-          placeholder="Username"
+          placeholder="abc@email.com"
           onChangeText={onChangeText}
           value={text}
         />
+        <Text nativeID="formLabel1" style={styles.label}>
+          Password
+        </Text>
+        <Image
+          style={styles.iconp}
+          source={require("../assets/password.png")}
+        />
         <TextInput
+          accessibilityLabelledBy="formLabel1"
           style={styles.input}
-          placeholder="Password"
+          placeholder="******"
           onChangeText={onChangeText1}
           value={text1}
         />
-        <View style={styles.buttonContainer}>
-          <Button title="Login" />
-        </View>
+        <Pressable style={styles.buttonContainer}>
+          <Text style={styles.button}>Login</Text>
+        </Pressable>
       </View>
-
+      <View style={styles.forget}>
+        <Link style={styles.flink} to={{ screen: "PatientRegister" }}>
+          Forgot Password ?
+        </Link>
+      </View>
       <View style={styles.bottom}>
-        <Text> Do not have an Account?</Text>
+        <Text> Don’t have an account? </Text>
         <Link style={styles.link} to={{ screen: "PatientRegister" }}>
-          Register
+          Signup
         </Link>
       </View>
     </ScrollView>
@@ -58,40 +72,86 @@ const styles = StyleSheet.create({
     resizeMode: "center",
     height: 200,
     margin: 50,
+    marginTop: 20,
   },
   text: {
-    paddingLeft: 140,
-    marginTop: -30,
     color: "#009A75",
-    marginBottom: 8,
+    display: "flex",
+    alignSelf: "center",
+    fontSize: 36,
+    fontWeight: "bold",
+    margin: 20,
+    padding: 10,
+    marginTop: -50,
+  },
+  label: {
+    color: "#009A75",
+    marginLeft: 15,
+    marginBottom: -30,
+    paddingButton: 10,
   },
   inputs: {
     marginLeft: 35,
   },
   input: {
-    borderColor: "#32DAFF",
+    borderColor: "white",
+    borderBottomColor: "#009A75",
     height: 50,
     margin: 12,
     borderWidth: 3,
     width: 315,
-    padding: 10,
+    paddingTop: 15,
+    paddingButton: 15,
+    paddingLeft: 5,
+  },
+  icone: {
+    position: "absolute",
+    right: 52,
+    top: 30,
+  },
+  iconp: {
+    position: "absolute",
+    right: 52,
+    top: 95,
+  },
+  button: {
+    fontSize: 16,
+    lineHeight: 27,
+    fontWeight: "bold",
+    letterSpacing: 0.25,
+    color: "black",
+    height: 28,
+    width: 50,
   },
   buttonContainer: {
-    margin: 20,
-    marginLeft: 11,
+    marginTop: 50,
+    marginLeft: 35,
     height: 50,
-    width: 315,
+    width: 275,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 10,
+    elevation: 3,
+    backgroundColor: "#009A75",
   },
+
   bottom: {
     margin: 20,
     padding: 5,
-    marginLeft: 80,
+    marginLeft: 100,
+  },
+
+  flink: {
+    marginTop: 20,
+    marginLeft: 150,
+    color: "#009A75",
+    cursor: "pointer",
   },
 
   link: {
     marginTop: -20,
-    marginLeft: 160,
-    color: "#32DAFF",
+    marginLeft: 150,
+    color: "#009A75",
     cursor: "pointer",
   },
 });

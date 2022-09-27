@@ -10,7 +10,7 @@ import {
 
 import { Link } from "@react-navigation/native";
 import { useRoute, useNavigation } from "@react-navigation/native";
-import CustomSwitch from "../Components/CustomSwitch";
+
 import Term from "../Components/Term";
 
 const TermCondtion = () => {

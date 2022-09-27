@@ -10,16 +10,15 @@ import {
 
 import { Link } from "@react-navigation/native";
 import { useRoute, useNavigation } from "@react-navigation/native";
-import Graph from "../Components/Graph";
 
-const Home = () => {
+const Locator = () => {
   return (
     <ScrollView style={{ backgroundColor: "white" }}>
-      <Home />
+      <Text>Locator</Text>
     </ScrollView>
   );
 };
 
-export default Home;
+export default Locator;
 
 const styles = StyleSheet.create({});

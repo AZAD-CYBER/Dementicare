@@ -11,15 +11,17 @@ import {
 import { Link } from "@react-navigation/native";
 import { useRoute, useNavigation } from "@react-navigation/native";
 import Graph from "../Components/Graph";
+import Rimender from "../Components/Rimender";
 
-const Home = () => {
+const Dashboard = () => {
   return (
     <ScrollView style={{ backgroundColor: "white" }}>
-      <Home />
+      <Graph />
+      <Rimender />
     </ScrollView>
   );
 };
 
-export default Home;
+export default Dashboard;
 
 const styles = StyleSheet.create({});
