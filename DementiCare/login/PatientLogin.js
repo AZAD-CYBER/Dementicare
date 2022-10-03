@@ -10,11 +10,11 @@ import {
 } from "react-native";
 import React from "react";
 import { Link } from "@react-navigation/native";
-
+import { useRoute, useNavigation } from "@react-navigation/native";
 const PatientLogin = () => {
   const [text, onChangeText] = React.useState("");
   const [text1, onChangeText1] = React.useState("");
-
+  const navigation = useNavigation();
   return (
     <ScrollView style={{ backgroundColor: "white" }}>
       <Image style={styles.container} source={require("../assets/logo.png")} />
@@ -45,7 +45,12 @@ const PatientLogin = () => {
           onChangeText={onChangeText1}
           value={text1}
         />
-        <Pressable style={styles.buttonContainer}>
+        <Pressable
+          style={styles.buttonContainer}
+          onPress={() => {
+            navigation.navigate("Home");
+          }}
+        >
           <Text style={styles.button}>Login</Text>
         </Pressable>
       </View>
@@ -55,7 +60,7 @@ const PatientLogin = () => {
         </Link>
       </View>
       <View style={styles.bottom}>
-        <Text> Don’t have an account? </Text>
+        <Text style={{ marginLeft: -10 }}> Don’t have an account? </Text>
         <Link style={styles.link} to={{ screen: "PatientRegister" }}>
           Signup
         </Link>
@@ -71,7 +76,7 @@ const styles = StyleSheet.create({
     width: 300,
     resizeMode: "center",
     height: 200,
-    margin: 50,
+    margin: 43,
     marginTop: 20,
   },
   text: {
@@ -80,7 +85,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     fontSize: 36,
     fontWeight: "bold",
-    margin: 20,
+    margin: 18,
     padding: 10,
     marginTop: -50,
   },
@@ -99,7 +104,7 @@ const styles = StyleSheet.create({
     height: 50,
     margin: 12,
     borderWidth: 3,
-    width: 315,
+    width: 300,
     paddingTop: 15,
     paddingButton: 15,
     paddingLeft: 5,
@@ -125,7 +130,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 50,
-    marginLeft: 35,
+    marginLeft: 25,
     height: 50,
     width: 275,
     alignItems: "center",
@@ -143,14 +148,14 @@ const styles = StyleSheet.create({
 
   flink: {
     marginTop: 20,
-    marginLeft: 150,
+    marginLeft: 140,
     color: "#009A75",
     cursor: "pointer",
   },
 
   link: {
-    marginTop: -20,
-    marginLeft: 150,
+    marginTop: -18,
+    marginLeft: 140,
     color: "#009A75",
     cursor: "pointer",
   },

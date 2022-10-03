@@ -12,13 +12,17 @@ import { Link } from "@react-navigation/native";
 import { useRoute, useNavigation } from "@react-navigation/native";
 import Graph from "../Components/Graph";
 import Rimender from "../Components/Rimender";
+import Bottom from "../Components/Bottom";
 
 const Dashboard = () => {
   return (
-    <ScrollView style={{ backgroundColor: "white" }}>
-      <Graph />
-      <Rimender />
-    </ScrollView>
+    <>
+      <ScrollView style={{ backgroundColor: "white" }}>
+        <Graph />
+        <Rimender />
+      </ScrollView>
+      <Bottom />
+    </>
   );
 };
 

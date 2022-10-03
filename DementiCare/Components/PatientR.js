@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     height: 50,
     margin: 12,
     borderWidth: 3,
-    width: 315,
+    width: 300,
     paddingTop: 13,
     paddingButton: 15,
     paddingLeft: 5,
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 30,
-    marginLeft: 35,
+    marginLeft: 28,
     height: 50,
     width: 275,
     alignItems: "center",
@@ -163,12 +163,12 @@ const styles = StyleSheet.create({
   bottom: {
     marginTop: -30,
     padding: 5,
-    marginLeft: 100,
+    marginLeft: 80,
   },
 
   link: {
-    marginTop: -20,
-    marginLeft: 165,
+    marginTop: -19,
+    marginLeft: 167,
     color: "#32DAFF",
     cursor: "pointer",
   },

@@ -9,18 +9,18 @@ import {
 import React from "react";
 import { useRoute, useNavigation } from "@react-navigation/native";
 import Bottom from "../Components/Bottom";
-const Behaviour_Tracker = () => {
+const Caregiver = () => {
   const navigation = useNavigation();
   return (
     <>
       <View>
-        <Text>Behaviour_Tracker</Text>
+        <Text>Caregiver</Text>
       </View>
       <Bottom />
     </>
   );
 };
 
-export default Behaviour_Tracker;
+export default Caregiver;
 
 const styles = StyleSheet.create({});

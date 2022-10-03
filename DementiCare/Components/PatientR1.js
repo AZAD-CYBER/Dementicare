@@ -30,7 +30,7 @@ const PatientR1 = () => {
     <ScrollView style={{ backgroundColor: "white" }}>
       <Text style={styles.text}>Kindly provide the details</Text>
       <View style={styles.inputs}>
-        <View style={{ marginTop: 20 }}>
+        <View style={{ marginTop: 20, marginBottom: 20 }}>
           <Text nativeID="formLabel" style={styles.label}>
             Name
           </Text>
@@ -45,6 +45,9 @@ const PatientR1 = () => {
             value={text1}
           />
         </View>
+        <Text nativeID="formLabel" style={styles.label}>
+          Gender
+        </Text>
         <PickerD data="Male" data1="Female" data2="Other" />
         <View style={{ marginBottom: 20, marginTop: 20 }}>
           <Text nativeID="formLabel" style={styles.label}>
@@ -61,7 +64,7 @@ const PatientR1 = () => {
             value={text1}
           />
         </View>
-        <View style={{ marginTop: 20 }}>
+        <View style={{ marginTop: 10 }}>
           <Text nativeID="formLabel" style={styles.label}>
             Certified Registered Number
           </Text>
@@ -131,7 +134,7 @@ const styles = StyleSheet.create({
     height: 50,
     margin: 12,
     borderWidth: 3,
-    width: 315,
+    width: 300,
     paddingTop: 13,
     paddingButton: 15,
     paddingLeft: 5,
@@ -147,7 +150,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 30,
-    marginLeft: 35,
+    marginLeft: 28,
     height: 50,
     width: 275,
     alignItems: "center",
@@ -159,7 +162,7 @@ const styles = StyleSheet.create({
   bottom: {
     marginTop: -50,
     padding: 10,
-    marginLeft: 50,
+    marginLeft: 45,
     textAlign: "Yatra-One",
   },
 });

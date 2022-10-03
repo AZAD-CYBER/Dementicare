@@ -10,12 +10,16 @@ import {
 
 import { Link } from "@react-navigation/native";
 import { useRoute, useNavigation } from "@react-navigation/native";
+import Bottom from "../Components/Bottom";
 
 const Personal = () => {
   return (
-    <ScrollView style={{ backgroundColor: "white" }}>
-      <Text>Personal</Text>
-    </ScrollView>
+    <>
+      <ScrollView style={{ backgroundColor: "white" }}>
+        <Text>Personal</Text>
+      </ScrollView>
+      <Bottom />
+    </>
   );
 };
 

@@ -15,7 +15,7 @@ import Graph from "../Components/Graph";
 const Home = () => {
   return (
     <ScrollView style={{ backgroundColor: "white" }}>
-      <Home />
+      <Text>drgrg</Text>
     </ScrollView>
   );
 };

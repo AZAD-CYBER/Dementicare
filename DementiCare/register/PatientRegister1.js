@@ -7,7 +7,6 @@ const PaientRegister1 = () => {
     <ScrollView style={{ backgroundColor: "white" }}>
       <Image style={styles.container} source={require("../assets/logo.png")} />
       <Text style={styles.text}>Register</Text>
-
       <P />
     </ScrollView>
   );
@@ -20,7 +19,7 @@ const styles = StyleSheet.create({
     width: 300,
     resizeMode: "center",
     height: 200,
-    margin: 50,
+    margin: 43,
     marginTop: 20,
   },
   text: {

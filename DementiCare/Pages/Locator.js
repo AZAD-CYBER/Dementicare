@@ -10,12 +10,17 @@ import {
 
 import { Link } from "@react-navigation/native";
 import { useRoute, useNavigation } from "@react-navigation/native";
-
+import Bottom from "../Components/Bottom";
+import Map from "../Components/Map";
 const Locator = () => {
   return (
-    <ScrollView style={{ backgroundColor: "white" }}>
-      <Text>Locator</Text>
-    </ScrollView>
+    <>
+      <ScrollView style={{ backgroundColor: "white" }}>
+        <Text>Locator</Text>
+        {/* <Map /> */}
+      </ScrollView>
+      <Bottom />
+    </>
   );
 };
 
