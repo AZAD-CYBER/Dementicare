@@ -11,6 +11,7 @@ import Caregiver from "../Pages/Caregiver";
 import Reminder from "../Pages/Reminder";
 import Account from "../Pages/Account";
 import PatientLogin from "../login/PatientLogin";
+import TopNav from "./TopNav";
 const Drawer = createDrawerNavigator();
 const DrawerRoutes = () => {
   return (
@@ -53,12 +54,13 @@ const DrawerRoutes = () => {
       />
       <Drawer.Screen
         name="Dementia_Talk"
-        component={Dementia_Talk}
+        component={TopNav}
         options={{
           headerShown: true,
           headerTintColor: "#009A75",
           headerTitleStyle: {
-            display: "none",
+            // display: "none",
+            color: "#000000",
           },
           title: "Dementia Talk",
           drawerItemStyle: {
