@@ -16,9 +16,11 @@ const Emergency = () => {
         <Text style={{ alignSelf: "center", fontSize: 20, opacity: 0.5 }}>
           Select the below contacts to call
         </Text>
+
         <Box value="ambu.jpeg" />
         <Modal_contact />
       </ScrollView>
+      <Modal_contact />
       <Bottom />
     </>
   );

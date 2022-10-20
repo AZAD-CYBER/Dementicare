@@ -1,7 +1,21 @@
 import React, { useState } from "react";
-import { Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
-
+import {
+  Alert,
+  Modal,
+  StyleSheet,
+  Text,
+  Pressable,
+  View,
+  Image,
+  TextInput,
+} from "react-native";
+import { Link } from "@react-navigation/native";
+import { useRoute, useNavigation } from "@react-navigation/native";
 const Modal_contact = () => {
+  const [text, onChangeText] = React.useState("");
+  const [text1, onChangeText1] = React.useState("");
+  const [text2, onChangeText2] = React.useState(null);
+  const navigation = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={styles.centeredView}>
@@ -16,27 +30,72 @@ const Modal_contact = () => {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Hello World!</Text>
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-              <Text style={styles.textStyle}>Hide Modal</Text>
-            </Pressable>
+            <Text style={styles.top1}>Add a contact</Text>
+            <Text style={styles.top2}>
+              Provide details to save the contact :
+            </Text>
+            <View style={styles.inputs}>
+              <Text nativeID="formLabel" style={styles.label}>
+                Name
+              </Text>
+
+              <TextInput
+                accessibilityLabelledBy="formLabel"
+                style={styles.input}
+                placeholder="Enter the name"
+                onChangeText={onChangeText}
+                value={text}
+              />
+              <Text nativeID="formLabel1" style={styles.label}>
+                Relation
+              </Text>
+
+              <TextInput
+                accessibilityLabelledBy="formLabel1"
+                style={styles.input}
+                placeholder="Relation"
+                onChangeText={onChangeText1}
+                value={text1}
+              />
+              <Text nativeID="formLabel1" style={styles.label}>
+                Contact
+              </Text>
+
+              <TextInput
+                accessibilityLabelledBy="formLabel1"
+                style={styles.input}
+                placeholder="Contact No"
+                onChangeText={onChangeText2}
+                value={text2}
+              />
+              <Pressable
+                style={styles.buttonContainer}
+                onPress={() => {
+                  setModalVisible(!modalVisible);
+                }}
+              >
+                <Text style={styles.button}>Save</Text>
+              </Pressable>
+            </View>
           </View>
         </View>
       </Modal>
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
-      >
-        <Text style={styles.textStyle}>Show Modal</Text>
+      <Pressable onPress={() => setModalVisible(true)}>
+        <Image source={require("../assets/modal.jpeg")} style={styles.Image} />
       </Pressable>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  top1: {
+    margin: 20,
+    fontSize: 30,
+  },
+  top2: {
+    margin: 20,
+    fontSize: 15,
+  },
   centeredView: {
     flex: 1,
     justifyContent: "center",
@@ -47,7 +106,8 @@ const styles = StyleSheet.create({
     margin: 20,
     backgroundColor: "white",
     borderRadius: 20,
-    padding: 35,
+    padding: 25,
+    paddingLeft: -10,
     alignItems: "center",
     shadowColor: "#000",
     shadowOffset: {
@@ -69,14 +129,82 @@ const styles = StyleSheet.create({
   buttonClose: {
     backgroundColor: "#2196F3",
   },
-  textStyle: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center",
+  Image: {
+    height: 80,
+    width: 80,
+    marginBottom: 60,
+    marginLeft: 200,
   },
   modalText: {
     marginBottom: 15,
     textAlign: "center",
+  },
+  container: {
+    width: 250,
+    resizeMode: "center",
+    height: 200,
+    margin: 43,
+    marginTop: 20,
+  },
+  text: {
+    color: "#009A75",
+    display: "flex",
+    alignSelf: "center",
+    fontSize: 36,
+    fontWeight: "bold",
+    margin: 18,
+    padding: 10,
+    marginTop: -50,
+  },
+  label: {
+    color: "#009A75",
+    marginLeft: 15,
+    marginBottom: -30,
+    paddingButton: 10,
+  },
+  inputs: {
+    marginLeft: 25,
+  },
+  input: {
+    borderColor: "white",
+    borderBottomColor: "#009A75",
+    height: 50,
+    margin: 12,
+    borderWidth: 3,
+    width: 250,
+    paddingTop: 15,
+    paddingButton: 15,
+    paddingLeft: 2,
+  },
+  icone: {
+    position: "absolute",
+    right: 52,
+    top: 30,
+  },
+  iconp: {
+    position: "absolute",
+    right: 52,
+    top: 95,
+  },
+  button: {
+    fontSize: 16,
+    lineHeight: 27,
+    fontWeight: "bold",
+    letterSpacing: 0.25,
+    color: "black",
+    height: 28,
+    width: 40,
+  },
+  buttonContainer: {
+    marginTop: 50,
+    marginLeft: 35,
+    height: 40,
+    width: 200,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 10,
+    elevation: 3,
+    backgroundColor: "#009A75",
   },
 });
 
