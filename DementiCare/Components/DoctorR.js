@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     height: 50,
     margin: 12,
     borderWidth: 3,
-    width: 300,
+    width: 266,
     paddingTop: 13,
     paddingButton: 15,
     paddingLeft: 5,
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 30,
-    marginLeft: 27,
+    marginLeft: 8,
     height: 50,
     width: 275,
     alignItems: "center",
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
   bottom: {
     marginTop: -50,
     padding: 10,
-    marginLeft: 45,
+    marginLeft: 30,
     textAlign: "Yatra-One",
   },
 });

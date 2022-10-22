@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     width: 300,
     resizeMode: "center",
     height: 200,
-    margin: 43,
+    margin: 30,
     marginTop: 20,
   },
   text: {

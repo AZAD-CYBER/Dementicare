@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     width: 300,
     resizeMode: "center",
     height: 200,
-    margin: 43,
+    margin: 30,
     marginTop: 20,
   },
   text: {
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     height: 50,
     margin: 12,
     borderWidth: 3,
-    width: 300,
+    width: 266,
     paddingTop: 15,
     paddingButton: 15,
     paddingLeft: 5,
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 50,
-    marginLeft: 25,
+    marginLeft: 8,
     height: 50,
     width: 275,
     alignItems: "center",
@@ -143,19 +143,19 @@ const styles = StyleSheet.create({
   bottom: {
     margin: 20,
     padding: 5,
-    marginLeft: 100,
+    marginLeft: 80,
   },
 
   flink: {
     marginTop: 20,
-    marginLeft: 140,
+    marginLeft: 120,
     color: "#009A75",
     cursor: "pointer",
   },
 
   link: {
     marginTop: -18,
-    marginLeft: 140,
+    marginLeft: 145,
     color: "#009A75",
     cursor: "pointer",
   },

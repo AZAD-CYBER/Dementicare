@@ -31,9 +31,9 @@ export default function App() {
             headerTitleStyle: { fontWeight: "bold" },
             headerShown: true,
             headerTitle: "Login",
-            // headerLeft: (props) => (
-            //   <MaterialCommunityIcons name="login" size={34} color="black" />
-            // ),
+            headerLeft: (props) => (
+              <MaterialCommunityIcons name="login" size={34} color="black" />
+            ),
           }}
         />
 

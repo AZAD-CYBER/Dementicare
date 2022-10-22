@@ -8,7 +8,7 @@ import {
   TextInput,
   ScrollView,
 } from "react-native";
-
+import Icon from "react-native-vector-icons/FontAwesome";
 function Chat() {
   const [text, onChangeText] = React.useState("");
   return (
@@ -25,7 +25,9 @@ function Chat() {
           onChangeText={onChangeText}
           value={text}
         />
-        <Text style={styles.send}> send</Text>
+        <Text style={styles.send}>
+          <Icon name="send" size={30} color="white" style={styles.icon} />
+        </Text>
       </View>
     </View>
   );
